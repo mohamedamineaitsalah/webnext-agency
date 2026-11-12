@@ -34,7 +34,7 @@
     const target = document.querySelector(id);
     if (target) {
       e.preventDefault();
-      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      target.scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth', block: 'start' });
       history.replaceState(null, '', id);
     }
   });
@@ -51,7 +51,7 @@
   const onScroll = () => {
     const y = window.scrollY;
     const max = document.documentElement.scrollHeight - innerHeight;
-    progress.style.setProperty('--p', max > 0 ? (y / max).toFixed(4) : 0);
+    if (progress) progress.style.setProperty('--p', max > 0 ? (y / max).toFixed(4) : 0);
     nav.classList.toggle('is-scrolled', y > 30);
     const menuOpen = toggle.getAttribute('aria-expanded') === 'true';
     nav.classList.toggle('is-hidden', !menuOpen && y > 600 && y > lastY + 4);
@@ -485,9 +485,9 @@
 
     const submitBtn = $('#form-send');
     const originalContent = submitBtn.innerHTML;
-    submitBtn.innerHTML = '<span>Sending...</span>';
-    submitBtn.style.pointerEvents = 'none';
-    submitBtn.style.opacity = '0.7';
+    submitBtn.innerHTML = '<span>Sending…</span>';
+    submitBtn.setAttribute('aria-busy', 'true');
+    submitBtn.disabled = true;
 
     try {
       const response = await fetch(form.action, {
@@ -495,21 +495,45 @@
         body: new FormData(form),
         headers: { 'Accept': 'application/json' }
       });
-      if (response.ok) {
-        showToast('Message sent successfully!');
+      const data = await response.json().catch(() => ({}));
+      if (response.ok && data.success !== 'false' && data.success !== false) {
+        showToast('Message sent. We will reply soon!');
         form.reset();
       } else {
-        showToast('Oops! Something went wrong.');
+        showToast('Could not send. Please email us directly.');
       }
     } catch (error) {
-      showToast('Oops! Network error.');
+      showToast('Network error. Please try again.');
     } finally {
       submitBtn.innerHTML = originalContent;
-      submitBtn.style.pointerEvents = 'auto';
-      submitBtn.style.opacity = '1';
+      submitBtn.removeAttribute('aria-busy');
+      submitBtn.disabled = false;
     }
   });
   [form.name, form.email, form.message].forEach(f => f.addEventListener('input', () => f.classList.remove('is-invalid')));
+
+
+  /* ---------- Contact form: keep an unsent draft (per tab) ---------- */
+  const DRAFT_KEY = 'webnex-brief-draft';
+  const saveDraft = () => {
+    try {
+      sessionStorage.setItem(DRAFT_KEY, JSON.stringify({
+        name: form.name.value, email: form.email.value, message: form.message.value,
+        type: (form.querySelector('input[name="type"]:checked') || {}).value
+      }));
+    } catch { /* storage unavailable */ }
+  };
+  try {
+    const d = JSON.parse(sessionStorage.getItem(DRAFT_KEY) || 'null');
+    if (d) {
+      form.name.value = d.name || ''; form.email.value = d.email || ''; form.message.value = d.message || '';
+      const r = d.type && form.querySelector(`input[name="type"][value="${CSS.escape(d.type)}"]`);
+      if (r) r.checked = true;
+    }
+  } catch { /* ignore */ }
+  form.addEventListener('input', saveDraft);
+  form.addEventListener('change', saveDraft);
+  form.addEventListener('reset', () => { try { sessionStorage.removeItem(DRAFT_KEY); } catch { /* ignore */ } });
 
   /* ---------- Magnetic buttons ---------- */
   if (finePointer && !reduceMotion) {
@@ -532,6 +556,34 @@
       if (track) track.style.animationPlayState = e.isIntersecting ? '' : 'paused';
     }).observe(marquee);
   }
+
+  /* ---------- FAQ: one open at a time ---------- */
+  const faqItems = $$('[data-faq] .qa');
+  faqItems.forEach(d => d.addEventListener('toggle', () => {
+    if (d.open) faqItems.forEach(o => { if (o !== d) o.open = false; });
+  }));
+
+  /* ---------- Floating WhatsApp: appear after the hero ---------- */
+  const waFloat = $('#wa-float');
+  if (waFloat) {
+    const contactSec = $('#contact');
+    const updWa = () => {
+      const pastHero = window.scrollY > innerHeight * 0.8;
+      const atContact = contactSec && contactSec.getBoundingClientRect().top < innerHeight * 0.6;
+      waFloat.classList.toggle('is-visible', pastHero && !atContact);
+    };
+    window.addEventListener('scroll', updWa, { passive: true });
+    updWa();
+  }
+
+  /* ---------- Mobile menu: keep keyboard focus inside while open ---------- */
+  document.addEventListener('keydown', e => {
+    if (e.key !== 'Tab' || toggle.getAttribute('aria-expanded') !== 'true') return;
+    const f = [toggle, ...$$('a', menu)];
+    const first = f[0], last = f[f.length - 1];
+    if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+    else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+  });
 
   /* ---------- Initial run ---------- */
   onScroll();

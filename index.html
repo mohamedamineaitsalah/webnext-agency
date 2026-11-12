@@ -4,26 +4,31 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>WEBNEX.agency</title>
+  <title>WEBNEX — Website Development &amp; UI/UX Design Agency</title>
   <meta name="description"
     content="WEBNEX designs and develops modern websites, landing pages, e-commerce stores and custom web applications. Fast, responsive and built with clean code. Let's build your next big idea." />
   <meta name="theme-color" content="#030716" />
+  <meta name="color-scheme" content="dark" />
   <meta property="og:type" content="website" />
   <meta property="og:title" content="WEBNEX — We Build Digital Experiences" />
   <meta property="og:description"
     content="Website development, UI/UX design, business websites, landing pages and custom web apps." />
   <meta property="og:image" content="assets/img/og-image.jpg" />
+  <meta property="og:site_name" content="WEBNEX" />
   <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="WEBNEX — We Build Digital Experiences" />
+  <meta name="twitter:description" content="Website development, UI/UX design, business websites, landing pages and custom web apps." />
+  <link rel="manifest" href="site.webmanifest" />
   <link rel="icon" type="image/png" href="assets/img/favicon.png" />
   <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
-    href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@300;400;500;600;700;800;900&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&family=Montserrat:wght@600;800&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@300;400;500;600;700;800&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&family=Montserrat:wght@600;800&display=swap"
     rel="stylesheet" />
-  <link rel="preload" as="image" href="assets/img/laarif-screen-sec.png" />
-  <link rel="stylesheet" href="css/style.css" />
+  <link rel="preload" as="image" href="assets/img/laarif-screen-sec.webp" />
+  <link rel="stylesheet" href="css/style.css?v=7" />
 
   <script type="application/ld+json">
   {
@@ -37,6 +42,21 @@
     "sameAs": ["https://www.instagram.com/webnext.agency/"]
   }
   </script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+    {"@type":"Question","name":"How does a project start?","acceptedAnswer":{"@type":"Answer","text":"Send a short brief using the contact form or WhatsApp. We reply, ask a few questions about your goals, then propose a plan and timeline before work begins."}},
+    {"@type":"Question","name":"What kinds of websites do you build?","acceptedAnswer":{"@type":"Answer","text":"Business websites, landing pages, e-commerce stores and custom web applications."}},
+    {"@type":"Question","name":"Will my website work on mobile?","acceptedAnswer":{"@type":"Answer","text":"Yes. Every page is designed and tested on desktop, tablet and mobile."}},
+    {"@type":"Question","name":"Do you offer support after launch?","acceptedAnswer":{"@type":"Answer","text":"Yes, we stay available after launch for updates, improvements and questions."}}
+  ]}
+  </script>
+  <noscript>
+    <style>
+      .preloader { display: none !important; }
+      body.is-loading { overflow: auto; }
+      .reveal, [data-hero-in], .hero__stage, .hero__title .line__in { opacity: 1 !important; transform: none !important; }
+    </style>
+  </noscript>
 </head>
 
 <body class="is-loading">
@@ -200,6 +220,7 @@
           <li><a href="#work" id="nav-work">Work</a></li>
           <li><a href="#process" id="nav-process">Process</a></li>
           <li><a href="#why" id="nav-why">Why us</a></li>
+          <li><a href="#faq" id="nav-faq">FAQ</a></li>
           <li><a href="#contact" id="nav-contact">Contact</a></li>
         </ul>
       </nav>
@@ -225,7 +246,8 @@
         <li><a href="#work"><span>03</span>Work</a></li>
         <li><a href="#process"><span>04</span>Process</a></li>
         <li><a href="#why"><span>05</span>Why us</a></li>
-        <li><a href="#contact"><span>06</span>Contact</a></li>
+        <li><a href="#faq"><span>06</span>FAQ</a></li>
+        <li><a href="#contact"><span>07</span>Contact</a></li>
       </ol>
     </nav>
     <div class="mobile-menu__foot">
@@ -307,17 +329,17 @@
 
             <figure class="win win--back" data-depth="0.55">
               <div class="win__bar"><i></i><i></i><i></i><span>amservice.concept</span></div>
-              <img src="assets/img/am-screen-sec.png"
-                alt="AM Service concept website homepage — Professional Services to Grow Your Business" width="960"
-                height="600" />
+              <img src="assets/img/am-screen-sec.webp"
+                alt="AM Service concept website homepage — Professional Services to Grow Your Business" width="1893"
+                height="875" />
             </figure>
 
             <figure class="win win--front" data-depth="0.9">
               <div class="win__bar"><i></i><i></i><i></i><span><svg class="icon">
                     <use href="#i-lock" />
                   </svg>laarifplaster.concept</span></div>
-              <img src="assets/img/laarif-screen-sec.png"
-                alt="LaarifPlaster concept website homepage — Authentic Moroccan Craftsmanship" width="960" height="640"
+              <img src="assets/img/laarif-screen-sec.webp"
+                alt="LaarifPlaster concept website homepage — Authentic Moroccan Craftsmanship" width="1886" height="878"
                 fetchpriority="high" />
             </figure>
 
@@ -484,12 +506,12 @@
           </div>
 
           <!-- Visual preview panel (decorative illustrations per service) -->
-          <div class="services__panel" aria-hidden="true">
+          <div class="services__panel">
             <div class="panel-frame">
               <div class="panel-frame__bar"><i></i><i></i><i></i><span class="panel-frame__url">webnex.studio/<b
                     data-svc-slug>development</b></span></div>
 
-              <div class="viz is-active" id="svc-panel-1" role="tabpanel" aria-labelledby="svc-tab-1" data-viz="1">
+              <div class="viz is-active" id="svc-panel-1" role="tabpanel" tabindex="0" aria-labelledby="svc-tab-1" data-viz="1">
                 <div class="viz-dev">
                   <div class="viz-dev__code">
                     <span style="--w:60%"></span><span style="--w:82%;--c:var(--cyan)"></span><span
@@ -505,7 +527,7 @@
                 </div>
               </div>
 
-              <div class="viz" id="svc-panel-2" role="tabpanel" aria-labelledby="svc-tab-2" data-viz="2">
+              <div class="viz" id="svc-panel-2" role="tabpanel" tabindex="0" aria-labelledby="svc-tab-2" data-viz="2">
                 <div class="viz-ux">
                   <div class="viz-ux__board">
                     <div class="wf wf--nav"></div>
@@ -524,7 +546,7 @@
                 </div>
               </div>
 
-              <div class="viz" id="svc-panel-3" role="tabpanel" aria-labelledby="svc-tab-3" data-viz="3">
+              <div class="viz" id="svc-panel-3" role="tabpanel" tabindex="0" aria-labelledby="svc-tab-3" data-viz="3">
                 <div class="viz-biz">
                   <div class="mini-nav"><b></b><i></i><i></i><i></i><em></em></div>
                   <div class="viz-biz__hero">
@@ -535,7 +557,7 @@
                 </div>
               </div>
 
-              <div class="viz" id="svc-panel-4" role="tabpanel" aria-labelledby="svc-tab-4" data-viz="4">
+              <div class="viz" id="svc-panel-4" role="tabpanel" tabindex="0" aria-labelledby="svc-tab-4" data-viz="4">
                 <div class="viz-lp">
                   <span class="viz-lp__badge"></span>
                   <span class="viz-lp__h"></span><span class="viz-lp__h viz-lp__h--2"></span>
@@ -545,7 +567,7 @@
                 </div>
               </div>
 
-              <div class="viz" id="svc-panel-5" role="tabpanel" aria-labelledby="svc-tab-5" data-viz="5">
+              <div class="viz" id="svc-panel-5" role="tabpanel" tabindex="0" aria-labelledby="svc-tab-5" data-viz="5">
                 <div class="viz-shop">
                   <div class="viz-shop__top"><b></b><span class="viz-shop__cart"><svg class="icon">
                         <use href="#i-cart" />
@@ -558,7 +580,7 @@
                 </div>
               </div>
 
-              <div class="viz" id="svc-panel-6" role="tabpanel" aria-labelledby="svc-tab-6" data-viz="6">
+              <div class="viz" id="svc-panel-6" role="tabpanel" tabindex="0" aria-labelledby="svc-tab-6" data-viz="6">
                 <div class="viz-app">
                   <aside><b></b><i></i><i class="on"></i><i></i><i></i></aside>
                   <div class="viz-app__main">
@@ -598,12 +620,12 @@
           <div class="project__visual" data-tilt>
             <div class="project__glow" aria-hidden="true"></div>
             <a href="https://mohamedamineaitsalah.github.io/plaster-gypsm/" target="_blank" rel="noopener noreferrer"
-              id="p1-visual-link">
-              <img src="assets/img/laarifplaster.png" alt="LaarifPlaster website displayed on a laptop" width="1424"
-                height="900" loading="lazy" />
+              id="p1-visual-link" aria-label="Open the LaarifPlaster live demo (new tab)">
+              <img src="assets/img/laarifplaster.webp" alt="LaarifPlaster website displayed on a laptop" width="1842"
+                height="854" loading="lazy" />
             </a>
             <a class="project__zoom" href="https://mohamedamineaitsalah.github.io/plaster-gypsm/" target="_blank"
-              rel="noopener noreferrer" style="text-decoration: none;">
+              rel="noopener noreferrer" aria-label="Visit LaarifPlaster site (new tab)">
               <svg class="icon">
                 <use href="#i-arrow" />
               </svg><span>Visit site</span>
@@ -615,7 +637,7 @@
             <p class="project__cat">Business website · Craft &amp; Interior</p>
             <h3 class="project__title" id="p1-title"><a href="https://mohamedamineaitsalah.github.io/plaster-gypsm/"
                 target="_blank" rel="noopener noreferrer"
-                style="color: inherit; text-decoration: none;">LaarifPlaster</a></h3>
+                class="project__title-link">LaarifPlaster</a></h3>
             <p class="project__desc">
               An elegant website for a Moroccan plastering craft brand — bringing the luxurious art of
               Tadelakt, Zellige and carved stucco to a modern audience. A dark, refined palette with gold accents
@@ -639,9 +661,9 @@
         <article class="project project--reverse reveal" aria-labelledby="p2-title">
           <div class="project__visual" data-tilt>
             <div class="project__glow project__glow--violet" aria-hidden="true"></div>
-            <img src="assets/img/amservice.png" alt="AM Service website displayed on a laptop" width="1184" height="860"
+            <img src="assets/img/amservice.webp" alt="AM Service website displayed on a laptop" width="1672" height="941"
               loading="lazy" />
-            <button class="project__zoom" type="button" data-lightbox="assets/img/amservice.png"
+            <button class="project__zoom" type="button" data-lightbox="assets/img/amservice.webp"
               data-lightbox-alt="AM Service homepage — full screen preview"
               data-lightbox-caption="AM Service — Concept project" id="p2-preview">
               <svg class="icon">
@@ -671,8 +693,8 @@
         <div class="work__duo">
           <article class="project project--card reveal" aria-labelledby="p3-title">
             <div class="project__visual project__visual--soft" data-tilt>
-              <img src="assets/img/bereau.png" alt="WEBNEX website concept shown on a laptop and a smartphone"
-                width="1200" height="1175" loading="lazy" />
+              <img src="assets/img/bereau.webp" alt="WEBNEX website concept shown on a laptop and a smartphone"
+                width="1536" height="1024" loading="lazy" />
             </div>
             <div class="project__info">
               <div class="project__meta"><span class="project__index">03</span><span class="tag tag--concept">In-house
@@ -685,21 +707,16 @@
           </article>
 
           <article class="project project--card reveal" aria-labelledby="p4-title">
-            <a href="#contact" class="project__visual project__visual--soft" data-tilt
-              style="display: block; position: relative; text-decoration: none;">
-              <img src="assets/img/img5516.png" alt="Start your project"
-                style="width: 100%; height: auto; display: block;" />
-              <span class="next-slot__ring" aria-hidden="true"
-                style="top: 24px; right: 24px; width: 64px; height: 64px; box-shadow: inset 0 0 0 1.5px var(--sky), 0 0 20px rgba(31,107,255,.6);">
-                <span style="font-size: 32px; color: var(--cyan);">+</span>
-              </span>
+            <a href="#contact" class="project__visual project__visual--soft project__visual--cta" data-tilt
+              aria-label="Start your project with WEBNEX">
+              <img src="assets/img/img5516.webp" alt="" width="1536" height="1024" loading="lazy" />
+              <span class="cta-plus" aria-hidden="true">+</span>
             </a>
             <div class="project__info">
               <div class="project__meta"><span class="project__index">04</span><span class="tag tag--concept">YOUR
                   PROJECT</span></div>
               <p class="project__cat">Start today · Let's talk</p>
-              <h3 class="project__title" id="p4-title" style="margin-bottom: 12px; line-height: 1.1;">Your project <span
-                  style="display: block; font-family: var(--f-serif); font-style: italic; font-weight: 300; font-size: 1.1em; color: var(--cyan); text-transform: lowercase;">could
+              <h3 class="project__title project__title--cta" id="p4-title">Your project <span>could
                   be next.</span></h3>
               <a href="#contact" class="link-arrow" id="p4-cta">Tell us about it <svg class="icon">
                   <use href="#i-arrow" />
@@ -1006,6 +1023,60 @@
       </div>
     </section>
 
+    <!-- ============ TECH STACK ============ -->
+    <section class="stack" aria-label="Technologies we use">
+      <div class="container">
+        <p class="stack__label reveal">Built with tools we trust</p>
+        <ul class="stack__list reveal">
+          <li>HTML5</li><li>CSS3</li><li>JavaScript</li><li>React</li><li>PHP</li><li>Laravel</li><li>Figma</li><li>Git</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ============ FAQ ============ -->
+    <section class="faq section" id="faq" aria-labelledby="faq-title">
+      <div class="container faq__layout">
+        <header class="section-head">
+          <div class="section-label reveal"><span>06</span> FAQ</div>
+          <h2 class="section-title reveal" id="faq-title">Questions, <em class="serif grad-text">answered.</em></h2>
+          <p class="section-intro reveal">Everything people usually ask before starting a project. Still curious?
+            <a class="link-arrow" href="#contact">Ask us directly <svg class="icon"><use href="#i-arrow" /></svg></a></p>
+        </header>
+        <div class="faq__list reveal" data-faq>
+          <details class="qa" open>
+            <summary>How does a project start?<svg class="icon"><use href="#i-arrow-down" /></svg></summary>
+            <p>Send us a short brief using the form below, or message us on WhatsApp. We reply, ask a few questions about
+              your goals and audience, then propose a plan and timeline before any work begins.</p>
+          </details>
+          <details class="qa">
+            <summary>What kinds of websites do you build?<svg class="icon"><use href="#i-arrow-down" /></svg></summary>
+            <p>Business websites, landing pages, e-commerce stores and custom web applications — all responsive,
+              fast and designed around your brand.</p>
+          </details>
+          <details class="qa">
+            <summary>Will my website work on mobile?<svg class="icon"><use href="#i-arrow-down" /></svg></summary>
+            <p>Yes. Every page is designed and tested on desktop, tablet and mobile, so it looks right and loads quickly
+              on any screen.</p>
+          </details>
+          <details class="qa">
+            <summary>Do you offer support after launch?<svg class="icon"><use href="#i-arrow-down" /></svg></summary>
+            <p>Yes. We stay available after launch for updates, improvements and questions, so your website keeps
+              working for your business.</p>
+          </details>
+          <details class="qa">
+            <summary>Can you redesign my existing website?<svg class="icon"><use href="#i-arrow-down" /></svg></summary>
+            <p>Absolutely. We can refresh the design, improve speed and structure, or rebuild from scratch — whichever
+              serves your goals best.</p>
+          </details>
+          <details class="qa">
+            <summary>How do I get a quote?<svg class="icon"><use href="#i-arrow-down" /></svg></summary>
+            <p>Tell us about your project in the form below. The scope, pages and features you need determine the price,
+              and we will send you a clear proposal.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
     <!-- ============ CONTACT ============ -->
     <section class="contact section" id="contact" aria-labelledby="contact-title">
       <div class="contact__horizon" aria-hidden="true"><span></span></div>
@@ -1013,7 +1084,7 @@
 
       <div class="container contact__layout">
         <div class="contact__copy">
-          <div class="section-label reveal"><span>06</span> Contact</div>
+          <div class="section-label reveal"><span>07</span> Contact</div>
           <h2 class="contact__title reveal" id="contact-title">
             Let's build your <span class="grad-text">next big idea.</span>
           </h2>
@@ -1079,14 +1150,16 @@
             <input type="hidden" name="_subject" value="New project with WEBNEX">
             <input type="hidden" name="_template" value="table">
             <input type="hidden" name="_captcha" value="false">
+            <input type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true"
+              style="position:absolute;left:-9999px;opacity:0;height:0;width:0">
             <p class="brief-form__title">Quick project brief</p>
             <div class="field">
               <label for="f-name">Your name</label>
-              <input id="f-name" name="name" type="text" autocomplete="name" required placeholder="your name" />
+              <input id="f-name" name="name" type="text" autocomplete="name" required placeholder="Your name" />
             </div>
             <div class="field">
               <label for="f-email">Email</label>
-              <input id="f-email" name="email" type="email" autocomplete="email" required placeholder="Your email" />
+              <input id="f-email" name="email" type="email" autocomplete="email" required placeholder="you@example.com" />
             </div>
             <fieldset class="field field--chips">
               <legend>What do you need?</legend>
@@ -1104,16 +1177,15 @@
                 placeholder="A few words about your idea, goals and timeline…"></textarea>
             </div>
             <p class="form-error" id="form-error" role="alert"></p>
-            <div class="brief-form__actions" style="display: block;">
-              <button class="btn" type="submit" id="form-send"
-                style="width: 100%; height: 52px; border-radius: 8px; background: #224499; color: #fff; font-size: 15px; font-weight: 600; text-transform: none; letter-spacing: 0; box-shadow: none;">
+            <div class="brief-form__actions brief-form__actions--full">
+              <button class="btn btn--send" type="submit" id="form-send">
                 <span>Send Message</span>
-                <svg class="icon" style="width: 18px; height: 18px;">
+                <svg class="icon">
                   <use href="#i-send" />
                 </svg>
               </button>
             </div>
-            <p class="brief-form__note">Your message will be sent directly to webnextagency1@gmail.com.</p>
+            <p class="brief-form__note">Your message goes straight to our inbox — we reply within 24 hours.</p>
           </form>
           <img class="contact__phone" src="assets/img/contact-phone.webp"
             alt="WEBNEX Instagram profile @webnext.agency on a smartphone" width="1000" height="1069" loading="lazy" />
@@ -1125,6 +1197,13 @@
   <!-- ============ FOOTER ============ -->
   <footer class="footer">
     <div class="container">
+      <div class="footer__cta">
+        <div>
+          <h2>Ready to build <span class="serif grad-text">something great?</span></h2>
+          <p>Tell us about your idea — we reply fast and keep it simple.</p>
+        </div>
+        <a class="btn btn--primary btn--lg" href="#contact" id="footer-cta"><span>Start your project</span><svg class="icon"><use href="#i-arrow" /></svg></a>
+      </div>
       <div class="footer__top">
         <div class="footer__brand">
           <a class="brand brand--lg" href="#top" aria-label="WEBNEX — back to top" id="footer-brand">
@@ -1144,6 +1223,7 @@
             <li><a href="#services">Services</a></li>
             <li><a href="#work">Work</a></li>
             <li><a href="#process">Process</a></li>
+            <li><a href="#faq">FAQ</a></li>
             <li><a href="#contact">Contact</a></li>
           </ul>
         </nav>
@@ -1158,7 +1238,7 @@
         <div class="footer__col">
           <p class="footer__head">Follow</p>
           <ul>
-            <li><a href="https://www.instagram.com/webnext.agency/" target="_blank" rel="noopener"
+            <li><a href="https://www.instagram.com/webnext.agency/" target="_blank" rel="noopener noreferrer"
                 class="footer__social"><svg class="icon">
                   <use href="#i-instagram" />
                 </svg>@webnext.agency</a></li>
@@ -1186,15 +1266,20 @@
     <figure>
       <div class="lightbox__frame">
         <div class="win__bar"><i></i><i></i><i></i><span id="lightbox-url">preview</span></div><img id="lightbox-img"
-          src="" alt="" />
+          alt="" />
       </div>
       <figcaption id="lightbox-caption"></figcaption>
     </figure>
   </dialog>
 
+  <a class="wa-float" id="wa-float" href="https://wa.me/212697936897?text=Hello%20WEBNEX%2C%20I%20would%20like%20to%20discuss%20a%20project."
+    target="_blank" rel="noopener noreferrer" aria-label="Chat with WEBNEX on WhatsApp">
+    <svg class="icon"><use href="#i-whatsapp" /></svg><span>Chat with us</span>
+  </a>
+
   <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
-  <script src="js/main.js?v=2" defer></script>
+  <script src="js/main.js?v=7" defer></script>
 </body>
 
 </html>

@@ -1,0 +1,12 @@
+{
+  "name": "WEBNEX — Website Development Agency",
+  "short_name": "WEBNEX",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#030716",
+  "theme_color": "#030716",
+  "icons": [
+    { "src": "assets/img/favicon.png", "sizes": "any", "type": "image/png" },
+    { "src": "assets/img/apple-touch-icon.png", "sizes": "180x180", "type": "image/png" }
+  ]
+}
